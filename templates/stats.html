@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block head %}
+  {{ super() }}
+  <link href="static/css/stats.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <div class="container">
+      <div class="table">
+    		<div class="table-header">
+    			<div class="header__item"><a id="date" class="filter__link" href="#">Test date</a></div>
+          <div class="header__item"><a id="eye" class="filter__link" href="#">Test date</a></div>
+          <div class="header__item"><a id="rate1" class="filter__link" href="#">100px</a></div>
+          <div class="header__item"><a id="rate2" class="filter__link" href="#">75px</a></div>
+          <div class="header__item"><a id="rate3" class="filter__link" href="#">50px</a></div>
+          <div class="header__item"><a id="rate4" class="filter__link" href="#">25px</a></div>
+          <div class="header__item"><a id="rate5" class="filter__link" href="#">18px</a></div>
+          <div class="header__item"><a id="rate6" class="filter__link" href="#">12px</a></div>
+          <div class="header__item"><a id="rate7" class="filter__link" href="#">8px</a></div>
+          <div class="header__item"><a id="delete" class="filter__link" href="#">Delete</a></div>
+        </div>
+        <div class="table-content">
+          {%- for entry in entries %}
+          <div id="{{ entry.id }}" class="table-row">
+            <div class="table-data">{{ entry.date }}</div>
+            <div class="table-data">{{ entry.eye }}</div>
+            {%- for rate in entry.rates %}
+            <div class="table-data {{ '' if rate is none else ('correct' if rate|eval == 1 else 'incorrect') }}">{{ rate if rate is not none else '-' }}</div>
+            {%- endfor %}
+            <div class="table-data delete-entry">X</div>
+          </div>
+          {%- endfor %}
+        </div>
+      </div>
+    </div>
+{% endblock %}
+{% block popups %}
+<div id="popup-removed" class="overlay">
+  <div class="popup">
+    <h2>Test entry removed!</h2>
+    <a class="close" href="#">&times;</a>
+    <div class="popup-content">
+      The test entry has been removed properly<br><br>
+    </div>
+  </div>
+</div>
+<div id="popup-error" class="overlay">
+  <div class="popup">
+    <h2>Error</h2>
+    <a class="close" href="#">&times;</a>
+    <div class="popup-content">
+      The test entry removal has failed<br><br>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block footer %}
+  {{ super() }}
+  <script src="static/js/stats_table.js"></script>
+  <script src="static/js/stats.js"></script>
+{% endblock %}

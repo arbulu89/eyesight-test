@@ -1,0 +1,157 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.content {
+  margin: 50px 10px 10px 10px;
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+}
+
+.menu {
+  position: absolute;
+  width: 100%;
+}
+
+.menu .left {
+  float: left;
+  margin-left: 100px; 
+}
+
+.menu .right {
+  float: right;
+  margin-right: 100px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 15px 15px 15px 15px;
+  border: 4px double #7b38d8;
+  width: 25%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #7b38d8;
+}
+.popup .popup-content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+button, a.button {
+  display: inline-block;
+  background-color: #7b38d8;
+  border-radius: 10px;
+  border: 4px double #cccccc;
+  color: #eeeeee;
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+button.large, a.button.large {
+  font-size: 28px;
+  width: 200px;
+  padding: 20px;
+}
+button.small, a.button.small {
+  font-size: 18px;
+  width: 150px;
+  padding: 5px;
+}
+button.disabled, a.button.disabled {
+  background-color: grey;
+  pointer-events: none;
+}
+button span, a.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+button span:after, a.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+button:hover, a.button:hover {
+  background-color: #f7c2f9;
+}
+button:hover span, a.button:hover span {
+  padding-right: 25px;
+}
+button:hover span:after, , a.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+a.button:link {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+td.incorrect {
+  color: red;
+}
+td.correct {
+  color: green;
+}
+tr:hover {background-color:#f5f5f5;}

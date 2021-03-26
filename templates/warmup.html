@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block head %}
+  {{ super() }}
+  <link href="static/css/warmup.css" rel="stylesheet">
+{% endblock %}
+{% block menu_left %}
+<div class="left">
+  <button id="btn-start" class="small">Start</button>
+  <button id="btn-pause" class="small">Pause</button>
+  <button id="btn-restart" class="small">Restart</button>
+</div>
+{% endblock %}
+{% block content %}
+    <div class="container">
+      <div class="ball"></div>
+    </div>
+{% endblock %}
+{% block footer %}
+  {{ super() }}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="static/js/warmup.js"></script>
+{% endblock %}

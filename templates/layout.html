@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  {% block head %}
+  <meta charset="utf-8">
+  <title>Eye test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="static/css/common.css" rel="stylesheet">
+  {% endblock %}
+</head>
+
+<body>
+  <div class="menu">
+    {% block menu_left %}{% endblock %}
+    <div class="right">
+      <button class="small" onclick="window.location.href='/warmup'">Warmup</button>
+      <button class="small" onclick="window.location.href='/test'">Test</button>
+      <button class="small" onclick="window.location.href='/stats'">Stats</button>
+    </div>
+  </div>
+  <div class="content">
+  {% block content %}{% endblock %}
+  </div>
+  {% block popups %}{% endblock %}
+  {% block footer %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  {% endblock %}
+</body>
+</html>

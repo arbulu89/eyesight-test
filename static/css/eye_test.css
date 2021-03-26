@@ -1,0 +1,50 @@
+.container {
+  margin-left: 350px;
+  margin-right: 350px;
+}
+
+.boxed-border {
+  border-radius: 15px 15px 15px 15px;
+  border: 4px double #7b38d8;
+}
+
+.test-container {
+  border-radius: 15px 15px 0px 0px !important;
+
+  display: table;
+  table-layout: fixed;
+  margin-top: 25%;
+  height: 150px;
+  width: 100%;
+}
+
+.test-char {
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  width: 20%;
+  height: 100%;
+}
+
+.options-container {
+  height: 250px;
+  display: flex;
+
+  border-radius: 0px 0px 15px 15px !important;
+}
+
+.eye-radio-container {
+  padding-left: 10px;
+  width: 20%;
+}
+
+.result-container {
+  padding-left: 10px;
+  width: 80%;
+}
+
+.tooltip-error {
+  color: red;
+  padding-top: 3px;
+  visibility: hidden;
+}

@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block head %}
+  {{ super() }}
+  <link href="static/css/eye_test.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <div class="container">
+      <div class="test-container boxed-border">
+        <div class="test-char"><span></span></div>
+        <div class="test-char"><span></span></div>
+        <div class="test-char"><span></span></div>
+        <div class="test-char"><span></span></div>
+        <div class="test-char"><span></span></div>
+      </div>
+      <div class="options-container boxed-border">
+        <div class="eye-radio-container boxed-border">
+          <p>Select the eye under test:</p>
+          <input type="radio" id="left" name="eye" value="Left" checked>
+          <label for="left">Left</label><br>
+          <input type="radio" id="right" name="eye" value="Right">
+          <label for="right">Right</label><br>
+        </div>
+        <div class="result-container boxed-border">
+          <p>Write the test character in the input box in the same order:</p>
+          <input type="text" id="result" name="result" maxlength="5" title="Test results. Add the 5 test characters" required="true"><br>
+          <span class="tooltip-error">Add the 5 test characters</span>
+          <br>
+          <button id="btn-check" class="small">Check</button>
+          <button id="btn-next" class="small">Next font size</button>
+          <button id="btn-restart" class="small" style="float:right;margin-right:230px">Restart</button>
+          <p><b>*Press enter key after adding your options to check the results. Press again to go to the next level.</b></p>
+        </div>
+      </div>
+    </div>
+{% endblock %}
+{% block popups %}
+<div id="popup" class="overlay">
+  <div class="popup">
+    <h2>Test finished!</h2>
+    <a class="close" href="#">&times;</a>
+    <div class="popup-content">
+      The test is finished. Save or discard the test:<br><br>
+      <button id="btn-save" class="small">Save</button>
+      <a id="btn-cancel" class="button small" href="#">Discard</a>
+    </div>
+  </div>
+</div>
+
+<div id="popup-completed" class="overlay">
+  <div class="popup">
+    <h2>Data saved!</h2>
+    <a class="close" href="#">&times;</a>
+    <div class="popup-content">
+      The data saved. Run a new test or go to stats:<br><br>
+      <a id="btn-new-test"class="button small" href="#">New test</a>
+      <button id="btn-popup-stats" class="small">Go to stats</button>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block footer %}
+  {{ super() }}
+  <script src="static/js/eye_test.js"></script>
+{% endblock %}
